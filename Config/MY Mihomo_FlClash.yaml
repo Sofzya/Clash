@@ -65,7 +65,6 @@ load-balance: &load-balance {type: load-balance, strategy: consistent-hashing, u
 c: &c {type: http, behavior: classical, format: text, interval: 86400}
 
 proxy-groups:
-
   - {name: 🚀 节点选择, type: select, include-all: true}
   - {name: ⭐ 特殊节点, type: select, include-all: true}
   - {name: 📽️ Emby服务, <<: *pg}

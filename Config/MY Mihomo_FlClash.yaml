@@ -65,13 +65,14 @@ load-balance: &load-balance {type: load-balance, strategy: consistent-hashing, u
 c: &c {type: http, behavior: classical, format: text, interval: 86400}
 
 proxy-groups:
+
   - {name: 🚀 节点选择, type: select, include-all: true}
   - {name: ⭐ 特殊节点, type: select, include-all: true}
-  - {name: 📽️ Emby服务, <<: *pg}
+  - {name: 📽️ Emby, <<: *pg}
   - {name: ☁ 云盘服务, <<: *pg}
   - {name: 📲 电报消息, <<: *pg}
   - {name: 🐦 推特消息, <<: *pg}
-  - {name: 🤖 AI服务, <<: *pg}
+  - {name: 🤖 AI, <<: *pg}
   - {name: 🎮 游戏平台, <<: *pg}
   - {name: 🅱 哔哩哔哩, <<: *pg}
   - {name: 📺 巴哈姆特, <<: *pg}
@@ -103,12 +104,12 @@ rule-providers:
 
 rules:
   - RULE-SET,Direct,DIRECT
-  - RULE-SET,Emby,📽️ Emby服务
+  - RULE-SET,Emby,📽️ Emby
   - RULE-SET,CloudDrive,☁ 云盘服务
   - RULE-SET,MEGA,☁ 云盘服务
   - RULE-SET,Telegram,📲 电报消息
   - RULE-SET,Twitter,🐦 推特消息
-  - RULE-SET,AI,🤖 AI服务
+  - RULE-SET,AI,🤖 AI
   - RULE-SET,Steam,🎮 游戏平台
   - RULE-SET,Epic,🎮 游戏平台
   - RULE-SET,BiliBili,🅱 哔哩哔哩

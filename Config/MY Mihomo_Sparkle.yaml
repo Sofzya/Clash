@@ -13,7 +13,7 @@
 
 p: &p {type: http, interval: 86400, exclude-filter: "总计|已用流量|Expire|重新设置|剩余流量|距离下次重置剩余|套餐到期|当您更新订阅后仅有此节点时请立即去官网查看公告", health-check: {enable: true, url: http://1.1.1.1/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
-  订阅: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
+  Subscribe: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
     url: http://your-service-provider
     <<: *p
     #override: # 修改节点前后缀时，需移除前方的 "#" 符号
@@ -67,11 +67,11 @@ c: &c {type: http, behavior: classical, format: text, interval: 86400}
 proxy-groups:
   - {name: 节点选择, type: select, include-all: true, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png}
   - {name: 特殊节点, type: select, include-all: true, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Star.png}
-  - {name: Emby服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png}
+  - {name: Emby, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png}
   - {name: 云盘服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/iCloud.png}
   - {name: 电报消息, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png}
   - {name: 推特消息, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png}
-  - {name: AI服务, <<: *pg, icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png}
+  - {name: AI, <<: *pg, icon: https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png}
   - {name: 游戏平台, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png}
   - {name: 哔哩哔哩, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png}
   - {name: 巴哈姆特, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png}
@@ -103,12 +103,12 @@ rule-providers:
 
 rules:
   - RULE-SET,Direct,DIRECT
-  - RULE-SET,Emby,Emby服务
+  - RULE-SET,Emby,Emby
   - RULE-SET,CloudDrive,云盘服务
   - RULE-SET,MEGA,云盘服务
   - RULE-SET,Telegram,电报消息
   - RULE-SET,Twitter,推特消息
-  - RULE-SET,AI,AI服务
+  - RULE-SET,AI,AI
   - RULE-SET,Steam,游戏平台
   - RULE-SET,Epic,游戏平台
   - RULE-SET,BiliBili,哔哩哔哩

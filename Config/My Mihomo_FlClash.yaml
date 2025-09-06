@@ -94,7 +94,7 @@ rule-providers:
   Emby: {<<: *c, path: ./rules/Emby.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list}
   Telegram: {<<: *c, path: ./rules/Telegram.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list}
   Twitter: {<<: *c, path: ./rules/Twitter.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list}
-  MEGA: {<<: *c, path: ./rules/MEGA.list, url: https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/mihomo/MEGA/MEGA.list}
+  MEGA: {<<: *c, path: ./rules/MEGA.list, url: https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/MEGA/MEGA.list}
   AI: {<<: *c, path: ./rules/AI.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list}
   Steam: {<<: *c, path: ./rules/Steam.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Steam.list}
   Epic: {<<: *c, path: ./rules/Epic.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Epic.list}

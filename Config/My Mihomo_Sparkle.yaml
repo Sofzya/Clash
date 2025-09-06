@@ -87,9 +87,9 @@ proxy-groups:
 
 rule-providers:
   Direct: {<<: *c, path: ./rules/Direct.list, url: https://github.com/Sofzya/Clash/raw/main/Rules/Direct.list}
-  CloudDrive: {<<: *c, path: ./rules/CloudDrive, url: https://github.com/Sofzya/Clash/raw/main/Rules/CloudDrive.list}
-  OnlyJP: {<<: *c, path: ./rules/OnlyJP, url: https://github.com/Sofzya/Clash/raw/main/Rules/OnlyJP.list}
-  Proxy: {<<: *c, path: ./rules/Proxy, url: https://github.com/Sofzya/Clash/raw/main/Rules/Proxy.list}
+  CloudDrive: {<<: *c, path: ./rules/CloudDrive.list, url: https://github.com/Sofzya/Clash/raw/main/Rules/CloudDrive.list}
+  OnlyJP: {<<: *c, path: ./rules/OnlyJP.list, url: https://github.com/Sofzya/Clash/raw/main/Rules/OnlyJP.list}
+  Proxy: {<<: *c, path: ./rules/Proxy.list, url: https://github.com/Sofzya/Clash/raw/main/Rules/Proxy.list}
   Emby: {<<: *c, path: ./rules/Emby.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list}
   Telegram: {<<: *c, path: ./rules/Telegram.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list}
   Twitter: {<<: *c, path: ./rules/Twitter.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list}

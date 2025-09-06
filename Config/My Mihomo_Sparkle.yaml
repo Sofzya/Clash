@@ -90,17 +90,17 @@ rule-providers:
   CloudDrive: {<<: *c, path: ./rules/CloudDrive, url: https://github.com/Sofzya/Clash/raw/main/Rules/CloudDrive.list}
   OnlyJP: {<<: *c, path: ./rules/OnlyJP, url: https://github.com/Sofzya/Clash/raw/main/Rules/OnlyJP.list}
   Proxy: {<<: *c, path: ./rules/Proxy, url: https://github.com/Sofzya/Clash/raw/main/Rules/Proxy.list}
-  Emby: {<<: *c, path: ./rules/Emby.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Emby.list}
-  Telegram: {<<: *c, path: ./rules/Telegram.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Telegram.list}
-  Twitter: {<<: *c, path: ./rules/Twitter.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Twitter.list}
-  MEGA: {<<: *c, path: ./rules/MEGA.list, url: https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/MEGA/MEGA.list}
-  AI: {<<: *c, path: ./rules/AI.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list}
-  Steam: {<<: *c, path: ./rules/Steam.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Steam.list}
-  Epic: {<<: *c, path: ./rules/Epic.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Epic.list}
-  BiliBili: {<<: *c, path: ./rules/Bilibili.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Bilibili.list}
-  Bahamut: {<<: *c, path: ./rules/Bahamut.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Bahamut.list}
-  YouTube: {<<: *c, path: ./rules/YouTube.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list}
-  Google: {<<: *c, path: ./rules/Google.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Google.list}
+  Emby: {<<: *c, path: ./rules/Emby.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list}
+  Telegram: {<<: *c, path: ./rules/Telegram.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list}
+  Twitter: {<<: *c, path: ./rules/Twitter.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list}
+  MEGA: {<<: *c, path: ./rules/MEGA.list, url: https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/mihomo/MEGA/MEGA.list}
+  AI: {<<: *c, path: ./rules/AI.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list}
+  Steam: {<<: *c, path: ./rules/Steam.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Steam.list}
+  Epic: {<<: *c, path: ./rules/Epic.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Epic.list}
+  BiliBili: {<<: *c, path: ./rules/Bilibili.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Bilibili.list}
+  Bahamut: {<<: *c, path: ./rules/Bahamut.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Bahamut.list}
+  YouTube: {<<: *c, path: ./rules/YouTube.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/YouTube.list}
+  Google: {<<: *c, path: ./rules/Google.list, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Google.list}
 
 rules:
   - RULE-SET,Direct,DIRECT

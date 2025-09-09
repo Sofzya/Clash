@@ -1,0 +1,74 @@
+p: &p {type: http, filter: "", health-check: {enable: true, url: http://1.1.1.1/generate_204, interval: 1800, timeout: 5000}}
+proxy-providers:
+  Subscribe: 
+    url: http://your-service-provider
+    <<: *p
+    #override: # 修改节点前后缀时，需移除前方的 "#" 符号
+      #additional-prefix: "节点前缀"
+      #additional-suffix: "节点后缀"
+  #Subscribe2: {url: http://your-service-provider, <<: *p}
+  #Subscribe3: {url: http://your-service-provider, <<: *p}
+  #Subscribe4: {url: http://your-service-provider, <<: *p}
+
+mixed-port: 7893
+tcp-concurrent: true
+allow-lan: true
+ipv6: false
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+find-process-mode: strict
+
+geodata-mode: true
+geox-url:
+  geoip: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat"
+  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb"
+  asn: "https://mirror.ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-ASN.mmdb"
+
+profile: { store-selected: true, store-fake-ip: false }
+sniffer: { enable: true, sniff: { HTTP: { ports: [80], override-destination: true }, TLS: { ports: [443, 8443] }, QUIC: { ports: [443, 8443] } } }
+
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: [any:53]
+        
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  listen: :1053
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter: ['*', '+.lan', '+.local', '+.direct', '+.msftconnecttest.com', '+.msftncsi.com']
+  nameserver: [223.5.5.5, 119.29.29.29]
+
+# 锚点参数
+pg: &pg {type: select, proxies: [🚀 节点选择]}
+url-test: &url-test {type: url-test, url: http://1.1.1.1/generate_204, interval: 300, tolerance: 0, 在clude-all: true}
+select: &select {type: select, include-all: true}
+fallback: &fallback {type: fallback, url: http://1.1.1.1/generate_204, interval: 300, include-all: true}
+load-balance: &load-balance {type: load-balance, strategy: consistent-hashing, url: http://1.1.1.1/generate_204, interval: 300, include-all: true}
+c: &c {type: http, behavior: classical, format: text, interval: 86400}
+
+proxy-groups:
+  - {name: 🚀 节点选择, type: select, include-all: true}
+
+rules:
+  - GEOSITE,openai,🚀 节点选择
+  - GEOSITE,category-games,🚀 节点选择
+  - GEOSITE,github,🚀 节点选择
+  - GEOSITE,telegram,🚀 节点选择
+  - GEOSITE,twitter,🚀 节点选择
+  - GEOSITE,microsoft,🚀 节点选择
+  - GEOSITE,youtube,🚀 节点选择
+  - GEOSITE,google,🚀 节点选择
+  - GEOSITE,geolocation-!cn,🚀 节点选择
+  - GEOSITE,private,DIRECT
+  - GEOIP,telegram,🚀 节点选择
+  - GEOIP,twitter,🚀 节点选择
+  - GEOIP,google,🚀 节点选择
+  - GEOIP,private,DIRECT
+  - GEOIP,cn,DIRECT
+  - MATCH,🚀 节点选择
+

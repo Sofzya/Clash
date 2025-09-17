@@ -1,4 +1,4 @@
-p: &p {type: http, interval: 86400, exclude-filter: "总计|已用流量|Expire|重新设置|剩余流量|距离下次重置剩余|套餐到期", health-check: {enable: true, url: http://1.1.1.1/generate_204, interval: 1800, timeout: 5000}}
+p: &p {type: http, interval: 86400, exclude-filter: "流量|重置|到期|官网|网址|文档", health-check: {enable: true, url: http://1.1.1.1/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
   Subscribe: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
     url: http://your-service-provider

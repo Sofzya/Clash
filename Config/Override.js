@@ -150,7 +150,6 @@ function main(config) {
       ...groupBaseOption,
       "name": "巴哈姆特",
       "type": "select",
-      "include-all": true,
       "proxies": ["DIRECT","节点选择", "特殊节点", "香港节点", "台湾节点", "日本节点","狮城节点","美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png"
     },
@@ -158,7 +157,6 @@ function main(config) {
       ...groupBaseOption,
       "name": "谷歌服务",
       "type": "select",
-      "include-all": true,
       "proxies": ["DIRECT","节点选择", "特殊节点", "香港节点", "台湾节点", "日本节点","狮城节点","美国节点"],
       "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
     },

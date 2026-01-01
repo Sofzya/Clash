@@ -6,7 +6,7 @@
 #
 # ================
 
-p: &p {type: http, interval: 86400, exclude-filter: "流量|重置|到期|官网|网址|文档", health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 1800, timeout: 5000}}
+p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
   Subscribe: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
     url: http://your-service-provider
@@ -60,8 +60,8 @@ load-balance: &load-balance {type: load-balance, strategy: consistent-hashing, u
 c: &c {type: http, behavior: classical, format: text, interval: 86400}
 
 proxy-groups:
-  - {name: 节点选择, type: select, include-all: true, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png}
-  - {name: 特殊节点, type: select, include-all: true, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Star.png}
+  - {name: 节点选择, type: select, include-all: true, exclude-filter: "流量|重置|到期|官网|网址|文档", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png}
+  - {name: 特殊节点, type: select, include-all: true, exclude-filter: "流量|重置|到期|官网|网址|文档", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Star.png}
   - {name: Emby, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png}
   - {name: 云盘服务, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/iCloud.png}
   - {name: 电报消息, <<: *pg, icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png}

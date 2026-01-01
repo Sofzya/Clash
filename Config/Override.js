@@ -288,10 +288,10 @@ function main(config) {
       "behavior": "classical",
       "url": "https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list"
     },
-    "Cici": {
+    "MoreAI": {
       ...ruleProviderCommon,
       "behavior": "classical",
-      "url": "https://github.com/Sofzya/Clash/raw/main/Rules/Cici.list"
+      "url": "https://github.com/Sofzya/Clash/raw/main/Rules/MoreAI.list"
     },
     "AI": {
       ...ruleProviderCommon,
@@ -362,7 +362,7 @@ function main(config) {
     "RULE-SET,MoreEmby,Emby",
     "RULE-SET,Telegram,电报消息",
     "RULE-SET,Twitter,推特消息",
-    "RULE-SET,Cici,AI",
+    "RULE-SET,MoreAI,AI",
     "RULE-SET,AI,AI",
     "RULE-SET,Steam,游戏平台",
     "RULE-SET,Epic,游戏平台",

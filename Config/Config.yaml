@@ -88,8 +88,8 @@ rule-providers:
   OutJP: {<<: *c, url: https://github.com/Sofzya/Clash/raw/main/Rules/OutJP.list}
   OnlyJP: {<<: *c, url: https://github.com/Sofzya/Clash/raw/main/Rules/OnlyJP.list}
   Proxy: {<<: *c, url: https://github.com/Sofzya/Clash/raw/main/Rules/Proxy.list}
-  Emby: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list}
   MoreEmby: {<<: *c, url: https://github.com/Sofzya/Clash/raw/main/Rules/MoreEmby.list}
+  Emby: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list}
   Telegram: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list}
   Twitter: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list}
   MoreAI: {<<: *c, url: https://github.com/Sofzya/Clash/raw/main/Rules/MoreAI.list}
@@ -112,8 +112,8 @@ rules:
   - RULE-SET,OutJP,排除日本
   - RULE-SET,OnlyJP,仅限日本
   - RULE-SET,Proxy,节点选择
-  - RULE-SET,Emby,Emby
   - RULE-SET,MoreEmby,Emby
+  - RULE-SET,Emby,Emby
   - RULE-SET,Telegram,电报消息
   - RULE-SET,Twitter,推特消息
   - RULE-SET,MoreAI,AI

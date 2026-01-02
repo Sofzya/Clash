@@ -268,15 +268,15 @@ function main(config) {
       "behavior": "classical",
       "url": "https://github.com/Sofzya/Clash/raw/main/Rules/Proxy.list"
     },
-    "Emby": {
-      ...ruleProviderCommon,
-      "behavior": "classical",
-      "url": "https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list"
-    },
     "MoreEmby": {
       ...ruleProviderCommon,
       "behavior": "classical",
       "url": "https://github.com/Sofzya/Clash/raw/main/Rules/MoreEmby.list"
+    },
+    "Emby": {
+      ...ruleProviderCommon,
+      "behavior": "classical",
+      "url": "https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list"
     },
     "Telegram": {
       ...ruleProviderCommon,
@@ -358,8 +358,8 @@ function main(config) {
     "RULE-SET,OutJP,排除日本",
     "RULE-SET,OnlyJP,仅限日本",
     "RULE-SET,Proxy,节点选择",
-    "RULE-SET,Emby,Emby",
     "RULE-SET,MoreEmby,Emby",
+    "RULE-SET,Emby,Emby",
     "RULE-SET,Telegram,电报消息",
     "RULE-SET,Twitter,推特消息",
     "RULE-SET,MoreAI,AI",

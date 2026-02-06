@@ -23,7 +23,7 @@ function main(config) {
   const proxyProviderCount =
     typeof config?.["proxy-providers"] === "object" ? Object.keys(config["proxy-providers"]).length : 0;
   if (proxyCount === 0 && proxyProviderCount === 0) {
-    throw new Error("配置文件中未找到任何代理");
+    throw new 错误("配置文件中未找到任何代理");
   }
 
   // 覆盖通用配置

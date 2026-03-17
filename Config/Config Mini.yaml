@@ -9,7 +9,7 @@
 p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
   Subscribe: 
-    url: http://your-service-provider
+    url: 
     <<: *p
     #override: # 修改节点前后缀时，需移除前方的 "#" 符号
       #additional-prefix: "节点前缀"
@@ -21,10 +21,9 @@ proxy-providers:
 mixed-port: 7893
 tcp-concurrent: true
 allow-lan: true
-ipv6: false
+ipv6: true
 log-level: info
 unified-delay: true
-global-client-fingerprint: chrome
 find-process-mode: strict
 
 geodata-mode: true
@@ -44,12 +43,13 @@ tun:
         
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   enhanced-mode: fake-ip
   listen: :1053
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter: ['*', '+.lan', '+.local', '+.direct', '+.msftconnecttest.com', '+.msftncsi.com']
+  fake-ip-filter: ['+.lan', '*', '+.local', '+.cmpassport.com', 'id6.me', 'open.e.189.cn', 'mdn.open.wo.cn', 'opencloud.wostore.cn', 'auth.wosms.cn', '+.10099.com.cn', '+.msftconnecttest.com', '+.msftncsi.com', 'lancache.steamcontent.com']
   nameserver: [223.5.5.5, 119.29.29.29]
+  proxy-server-nameserver: [223.5.5.5, 119.29.29.29]
 
 # 锚点参数
 url-test: &url-test {type: url-test, url: http://www.gstatic.com/generate_204, interval: 300, tolerance: 0, include-all: true}

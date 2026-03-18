@@ -1,4 +1,4 @@
-# 官方11文档：https://wiki.metacubex.one/
+# 官方文档：https://wiki.metacubex.one/
 #
 # 以 '#' 或 '//' 开头的配置文件行为注释行
 #
@@ -8,7 +8,7 @@
 
 p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
-  订阅: 
+  Subscribe: 
     url: 
     <<: *p
     #override: # 修改节点前后缀时，需移除前方的 "#" 符号

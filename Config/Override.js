@@ -1,17 +1,26 @@
-// Clash Verge Rev & Mihomo-Party / FLClash 通用脚本配置
+// 参考 Verge Rev 示例 Script 配置
+//
+// Clash Verge Rev (Version ≥ 17.2) & Mihomo-Party (Version ≥ 1.5.10)
+//
+//
+// 最后更新时间: 2026-04-02
 
 function main(config) {
+  // 规则集通用配置
   const ruleProviderCommon = {
     "type": "http",
     "format": "text",
     "interval": 86400
 };
+  // 策略组通用配置
   const groupBaseOption = {
     "interval": 300,
     "url": "http://www.gstatic.com/generate_204",
     "max-failed-times": 3,
     "exclude-filter": "流量|重置|到期|官网|网址|文档",
 };
+  // 自定义分组通用配置
+  const commonProxies = ["DIRECT", "节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"];
   const proxyCount = config?.proxies?.length ?? 0;
   const proxyProviderCount = typeof config?.["proxy-providers"] === "object" ? Object.keys(config["proxy-providers"]).length : 0;
   if (proxyCount === 0 && proxyProviderCount === 0) {
@@ -62,12 +71,11 @@ function main(config) {
   // 5. TUN 配置
   config["tun"] = {
     "enable": true,
-    "stack": "mixed",
+    "stack": "system",
     "dns-hijack": ["any:53"]
   };
 
-  // 6. 策略组覆盖 (移除了原代码中的 Tab 缩进)
-  const commonProxies = ["DIRECT", "节点选择", "香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"];
+  // 6. 策略组覆盖
   config["proxy-groups"] = [
     { ...groupBaseOption, "name": "节点选择", "type": "select", "include-all": true, "proxies": ["香港节点", "台湾节点", "日本节点", "狮城节点", "美国节点"], "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png" },
     { ...groupBaseOption, "name": "国外网站", "type": "select", "proxies": commonProxies, "icon": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png" },
